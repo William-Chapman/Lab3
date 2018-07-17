@@ -54,15 +54,10 @@ namespace Lab_3
                     //if even & < 25 set 'situ' even and less than 25
                     situ = "Even and less than 25";
                 }
-                else if (userInput > 25 && userInput < 60)
+                else if (userInput > 25)
                 {
                     //if even & between 26 and 60 set 'situ' even
                     situ = "Even";
-                }
-                else
-                {
-                    //if even & > 60 set 'situ' number and even
-                    situ = userInput.ToString() + " Even";
                 }             
             }
 
