@@ -77,6 +77,7 @@ namespace Lab_3
                 else if (response == "n" || response == "no")
                 {
                     //if no, exit
+                    i = 5;
                     return;
                 }
 
