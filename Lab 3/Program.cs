@@ -63,17 +63,41 @@ namespace Lab_3
 
         static void Continue(string userName)
         {
-            Console.WriteLine("Continue? (y/n): ");
-            if (Console.ReadLine().ToLower() == "y")
+            string response;
+            for (int i = 0; i < 5; i++)
             {
-                //if yes, restart at calc
-                Calc(userName);
+                Console.WriteLine("Continue? (y/n): ");
+                response = Console.ReadLine().ToLower();
+
+                if (response == "y" || response == "yes")
+                {
+                    //if yes, restart at calc
+                    Calc(userName);
+                }
+                else if (response == "n" || response == "no")
+                {
+                    //if no, exit
+                    return;
+                }
+
+                if (i <= 2 && response != "n" && response != "no" && response != "y" && response != "yes")
+                {
+                    //if the user enters neither, inform and repeat
+                    Console.WriteLine($"Sorry {userName}, I could not understand your response.");
+                    Console.WriteLine("Please enter a valid response.");
+                }
+                else if (i == 3 && response != "n" && response != "no" && response != "y" && response != "yes")
+                {
+                    Console.WriteLine($"Sorry {userName}, I could not understand your response.");
+                    Console.WriteLine("If a vaild response is not entered on this attempt the program will end");
+                }
+                else if (i == 4 && response != "n" && response != "no" && response != "y" && response != "yes")
+                {
+                    Console.WriteLine($"Sorry {userName}, I could not understand your response.");
+                    Console.WriteLine("You have run out of continue attempts and the program has terminated.");
+                }
             }
-            else
-            {
-                //if no, exit
-                return;
-            }
+            return;
         }
     }
 }
