@@ -96,6 +96,7 @@ namespace Lab_3
                 {
                     Console.WriteLine($"Sorry {userName}, I could not understand your response.");
                     Console.WriteLine("You have run out of continue attempts and the program has terminated.");
+                    i = 5;
                 }
             }
             return;
