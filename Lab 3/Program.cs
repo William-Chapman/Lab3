@@ -13,10 +13,6 @@ namespace Lab_3
             userName = Console.ReadLine();
 
             Calc(userName);
-
-            //continue
-            Continue(userName);
-            return;
         }
 
         static void Calc(string userName)
@@ -31,14 +27,12 @@ namespace Lab_3
                 //tell them to enter a number and call continue
                 Console.WriteLine($"You need to enter a number, {userName}.");
                 Continue(userName);
-                return;
             }
             else if (userInput > 100 || userInput < 0)
             {
                 //repeat to them the range and call continue
                 Console.WriteLine($"{userName}, your number needs to be between 1 and 100.");
                 Continue(userName);
-                return;
             }
             //use mod2 (=1 odd, =0 even)
             else if (userInput % 2 == 1)
@@ -64,7 +58,7 @@ namespace Lab_3
             if (situ != null)
             Console.WriteLine(situ);
 
-            return;
+            Continue(userName);
         }
 
         static void Continue(string userName)
